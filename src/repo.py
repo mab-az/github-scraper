@@ -1,6 +1,6 @@
 import json
 import requests
-from helpme import save_json, extract_data, group_with_same_key
+from src.helpme import save_json, extract_data, group_with_same_key
 
 
 class Repo():

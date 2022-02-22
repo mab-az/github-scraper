@@ -1,1 +1,9 @@
 .venv/
+data/
+results/
+user_profiles/
+
+*.html
+*.json
+
+__pycache__/

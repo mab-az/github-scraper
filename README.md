@@ -1,5 +1,11 @@
 # GitHub Profile Scraper
 
+## Steps
+
+1. Create folder **/data**
+2. Download the page and save it as **.html** in folder **/data**
+3. run [parser_people_list.py](parser_people_list.py)
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
@@ -30,12 +36,15 @@
   - **Commit Data** can be used to scrape commit history and 'Sha' values along with commit message.
 
 
-![](docs/driver_dot_py.gif)
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the GPL-3.0 License. See `LICENSE` for more information.
 
 
+## Next
+
+- GitHub API blocks me (max 60 requests per hour)
+> curl -I https://api.github.com/users/mab-az
+
+- create a folder with all users individual profiles
