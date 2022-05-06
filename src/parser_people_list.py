@@ -8,7 +8,7 @@ def parse_github_people_list():
     users = []
 
     for file in os.listdir('data'):
-        if '.html' in file:
+        if 'page_RIA.html' in file:
             file_path = f"data/{file}"
             print(file_path)
         
@@ -24,9 +24,9 @@ def parse_github_people_list():
                         users.append(user)
 
 
-    unique_users = set(users)
+    unique_users = list(set(users))
 
-    with open('results/users_list.json', 'w') as f:
+    with open('results/users_list_ria.json', 'w') as f:
         json.dump(unique_users, f, indent= True)
 
 

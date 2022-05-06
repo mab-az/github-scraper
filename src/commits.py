@@ -1,6 +1,6 @@
 import json
 import requests
-from src.helpme import save_json, extract_data
+from parser_people_list import extract_data
 
 class Commit():
     

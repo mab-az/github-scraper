@@ -54,7 +54,7 @@ def scrape_all_users():
 
 
 def create_individual_profiles():
-    with open('results/az_users_list.json', 'r') as f:
+    with open('results/users_to_add.json', 'r') as f:
         users_to_add = json.load(f)
 
     print(f"All contrinutors: {len(users_to_add)}")
@@ -76,23 +76,48 @@ def create_individual_profiles():
             json.dump(diff, f)
 
 
-def combine_individual_profies():
+def combine_individual_profies(selected_list=None):
     """Creates the contrinutors.json file to be used on the website"""
 
     contributors = []
+    user_list = sorted([x.split(".")[0] for x in set(os.listdir('user_profiles'))])
 
-    for user in os.listdir('user_profiles'):
-        with open(f"user_profiles/{user}", 'r') as f:
+    for user in user_list:
+        with open(f"user_profiles/{user}.json", 'r') as f:
             profile = json.load(f)
 
-        contributors.append({"author": profile})
+        if selected_list:
+            if user in selected_list:
+                contributors.append({"author": profile})
+        else:
+            contributors.append({"author": profile})
 
-    with open('results/contributors.json', 'w') as f:
+    print(len(contributors))
+
+    with open('results/contributors_ria.json', 'w') as f:
         json.dump(contributors, f) 
 
 
 
 if __name__ == "__main__":
+    selected_list = [
+ "adam-2-taylor",
+ "nithin8702",
+ "TatianaSct",
+ "homeshsayal",
+ "talipucar",
+ "jaynanavati-az",
+ "AngermannBR",
+ "GreetDB",
+ "SamuelHLewis",
+ "JTT94",
+ "eHajiramezaniAZ",
+ "mab-az",
+ "doglic-az",
+ "Hoda-Sharifian",
+ "DrClick"
+]
+
     # create_individual_profiles()
-    combine_individual_profies()
+    combine_individual_profies(selected_list)
     

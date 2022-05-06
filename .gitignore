@@ -2,8 +2,13 @@
 data/
 results/
 user_profiles/
+scholar_html/
+DSAIprojects/
+
+env
 
 *.html
 *.json
 
 __pycache__/
+.DS_Store
